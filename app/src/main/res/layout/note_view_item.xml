@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/note_box"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/rectangle_frame"
+    android:padding="8dp"
+    android:textAlignment="center"
+    android:textColor="@color/dark_grey"
+    android:textSize="12sp"
+    android:theme="@style/TextTheme"
+    tools:text="text"/>

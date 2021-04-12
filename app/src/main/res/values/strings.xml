@@ -1,0 +1,34 @@
+<resources>
+    <!-- App name. -->
+    <string name="app_name">Memor&amp;um</string>
+    <!-- Toolbar titles. -->
+    <string name="toolbar_main_title">Notes</string>
+    <string name="toolbar_help_title">Help</string>
+    <string name="toolbar_note_title">New Note</string>
+    <string name="toolbar_edit_note_title">Edit Note</string>
+    <!-- Menu items titles. -->
+    <string name="help_icon_title">Help</string>
+    <string name="delete_icon_title">Delete</string>
+    <!-- Tab Layout names. -->
+    <string name="phoenix_text">PHOENIX</string>
+    <string name="dragon_text">DRAGON</string>
+    <string name="unicorn_text">UNICORN</string>
+    <!-- Help items headers. -->
+    <string name="help_item_header1">Phoenix</string>
+    <string name="help_item_header2">Dragon</string>
+    <string name="help_item_header3">Unicorn</string>
+    <!-- Help items descriptions. -->
+    <string name="help_item_description1">Phoenix category is used to keep URGENT notes.</string>
+    <string name="help_item_description2">Dragon category is used to keep IMPORTANT notes.</string>
+    <string name="help_item_description3">Unicorn category is used to keep PERSONAL notes.</string>
+    <!-- Edit note header box hint. -->
+    <string name="header_note_box_hint">Enter header</string>
+    <!-- Edit note description box hint. -->
+    <string name="description_note_box_hint.">Enter description</string>
+    <!-- Toast Warnings. -->
+    <string name="category_is_not_chosen">Choose category</string>
+    <string name="header_is_empty">Fill header</string>
+    <string name="note_was_added">Note was added</string>
+    <string name="note_was_edited">Note was edited</string>
+    <string name="note_was_deleted">Note was deleted</string>
+</resources>

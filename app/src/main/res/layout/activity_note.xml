@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteActivity">
+
+    <!-- Adding toolbar. -->
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Adding category chooser. -->
+    <RadioGroup
+        android:id="@+id/category_chooser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:theme="@style/TextTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_bar">
+        <!-- First chooser. -->
+        <RadioButton
+            android:id="@+id/category_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/phoenix_text" />
+        <!-- Second chooser. -->
+        <RadioButton
+            android:id="@+id/category_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/dragon_text" />
+        <!-- Third chooser. -->
+        <RadioButton
+            android:id="@+id/category_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/unicorn_text" />
+    </RadioGroup>
+
+    <!-- Adding scroller -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_chooser">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Adding header box. -->
+            <EditText
+                android:id="@+id/header_box"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/transparent"
+                android:ems="10"
+                android:hint="@string/header_note_box_hint"
+                android:inputType="textMultiLine"
+                android:textSize="24sp"
+                android:theme="@style/TextTheme" />
+
+            <!-- Adding description box. -->
+            <EditText
+                android:id="@+id/description_box"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/transparent"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/description_note_box_hint."
+                android:inputType="textMultiLine"
+                android:textSize="18sp"
+                android:theme="@style/TextTheme" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Adding floating submit box. -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_done_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
