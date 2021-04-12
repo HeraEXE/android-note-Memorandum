@@ -9,7 +9,6 @@
     android:background="@drawable/rectangle_frame"
     android:padding="8dp"
     android:textAlignment="center"
-    android:textColor="@color/dark_grey"
     android:textSize="12sp"
     android:theme="@style/TextTheme"
     tools:text="text"/>
