@@ -72,6 +72,8 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(viewBinding.tabLayout, viewBinding.pager) { tab, position ->
             tab.setText(tabList[position])
         }.attach()
+        //val tab = viewBinding.tabLayout.getTabAt(1)
+        //tab?.select()
     }
 
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hera.memorandum.*
@@ -27,7 +28,9 @@ class NoteListAdapter(private val activity: MainActivity,
 
     // ViewHolder.
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val noteBox: TextView = view.findViewById(R.id.note_box)
+        val noteBox: LinearLayout = view.findViewById(R.id.note_box)
+        val noteTitle: TextView = view.findViewById(R.id.note_title)
+        val noteDescription: TextView = view.findViewById(R.id.note_description)
     }
 
     // On Create View Holder.
@@ -45,9 +48,10 @@ class NoteListAdapter(private val activity: MainActivity,
     // On Bind View Holder.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val note = notes!![position]
-        holder.noteBox.text = note.header
+        holder.noteTitle.text = note.header
+        holder.noteDescription.text = note.description
         holder.noteBox.setOnClickListener {
-            val intent: Intent = Intent(activity, EditNoteActivity::class.java)
+            val intent = Intent(activity, EditNoteActivity::class.java)
             intent.putExtra(EditNoteActivity.ID, note.id)
             intent.putExtra(EditNoteActivity.HEADER, note.header)
             intent.putExtra(EditNoteActivity.DESCRIPTION, note.description)

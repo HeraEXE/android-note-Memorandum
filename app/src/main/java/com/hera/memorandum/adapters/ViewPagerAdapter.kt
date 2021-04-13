@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.hera.memorandum.MainActivity
 import com.hera.memorandum.NoteViewModel
 import com.hera.memorandum.R
@@ -35,7 +36,7 @@ class ViewPagerAdapter(private val activity: MainActivity, private val viewModel
     // On Bind View Holder.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.recycler.adapter = NoteListAdapter(activity, viewModel, position)
-        holder.recycler.layoutManager = GridLayoutManager(activity, 2)
+        holder.recycler.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
     }
 
     // Holds categories quantity.

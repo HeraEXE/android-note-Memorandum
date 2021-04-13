@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/note_box"
@@ -7,8 +7,27 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@drawable/rectangle_frame"
-    android:padding="8dp"
-    android:textAlignment="center"
-    android:textSize="12sp"
-    android:theme="@style/TextTheme"
-    tools:text="text"/>
+    android:orientation="vertical">
+
+    <!-- Note title. -->
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:theme="@style/TextTheme"
+        tools:text="text" />
+
+    <!-- Note description -->
+    <TextView
+        android:id="@+id/note_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textAlignment="viewStart"
+        android:textSize="12sp"
+        android:theme="@style/TextTheme"
+        tools:text="text" />
+</LinearLayout>
