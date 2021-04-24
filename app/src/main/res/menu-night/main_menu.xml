@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This menu is used in main activity. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Mode icon. -->
+    <item
+        android:id="@+id/mode_icon"
+        android:icon="@drawable/outline_light_mode_24"
+        android:title="@string/help_icon_title"
+        app:showAsAction="always" />
+
+    <!-- Help icon. -->
+    <item
+        android:id="@+id/help_icon"
+        android:icon="@drawable/outline_help_24"
+        android:title="@string/help_icon_title"
+        app:showAsAction="always" />
+
+</menu>

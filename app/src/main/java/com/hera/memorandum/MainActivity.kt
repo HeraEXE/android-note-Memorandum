@@ -109,12 +109,10 @@ class MainActivity : AppCompatActivity() {
                 if (isDarkMode) {
                     prefsEditor.putBoolean(MODE, false)
                     prefsEditor.apply()
-                    item.setIcon(R.drawable.outline_dark_mode_24)
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 } else {
                     prefsEditor.putBoolean(MODE, true)
                     prefsEditor.apply()
-                    item.setIcon(R.drawable.outline_light_mode_24)
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
             }
