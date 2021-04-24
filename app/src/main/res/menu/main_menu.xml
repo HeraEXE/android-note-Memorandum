@@ -3,6 +3,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Mode icon. -->
+    <item
+        android:id="@+id/mode_icon"
+        android:icon="@drawable/outline_dark_mode_24"
+        android:title="@string/help_icon_title"
+        app:showAsAction="always" />
+
     <!-- Help icon. -->
     <item
         android:id="@+id/help_icon"

@@ -1,5 +1,6 @@
 package com.hera.memorandum
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -24,10 +25,27 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivityMainBinding
     private lateinit var viewModelFactory: NoteViewModelFactory
     private lateinit var viewModel: NoteViewModel
+    private lateinit var sharedPrefs: SharedPreferences
+    private lateinit var prefsEditor: SharedPreferences.Editor
+    private var isDarkMode = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Setting Shared Prefs.
+        sharedPrefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        prefsEditor = sharedPrefs.edit()
+
+        // Getting values from the Shared Prefs.
+        isDarkMode = sharedPrefs.getBoolean(MODE, false)
+
+        // Setting Mode.
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
         // Defining View Binding and Content View.
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -85,13 +103,28 @@ class MainActivity : AppCompatActivity() {
 
     // Setting menu items' behavior.
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.help_icon)
-            startActivity(Intent(this, HelpActivity::class.java))
+        when (item.itemId) {
+            R.id.help_icon -> startActivity(Intent(this, HelpActivity::class.java))
+            R.id.mode_icon -> {
+                if (isDarkMode) {
+                    prefsEditor.putBoolean(MODE, false)
+                    prefsEditor.apply()
+                    item.setIcon(R.drawable.outline_dark_mode_24)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                } else {
+                    prefsEditor.putBoolean(MODE, true)
+                    prefsEditor.apply()
+                    item.setIcon(R.drawable.outline_light_mode_24)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 
     // Categories Names.
     companion object {
+        const val MODE = "MODE"
         const val PHOENIX = R.string.phoenix_text
         const val DRAGON = R.string.dragon_text
         const val UNICORN = R.string.unicorn_text
